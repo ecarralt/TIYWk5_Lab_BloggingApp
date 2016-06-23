@@ -16,10 +16,7 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 
 
-#sqlite3 gem file
-# group :development, :test do
-# 	gem ’sqlite3’
-# end
+
 
 
 #posgres and rails factor gem file
