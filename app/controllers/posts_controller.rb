@@ -16,13 +16,13 @@ class PostsController < ApplicationController
 
     @post = Post.new
     @post.title = params[:post][:title]
-    @post.title = params[:post][:title]
+    @post.body = params[:post][:body]
 
-    @post.save
-
-    redirect_to posts_path
-
-
+    if @post.save
+      redirect_to posts_path
+    else
+      render :new
+    end
   end
 
 end
