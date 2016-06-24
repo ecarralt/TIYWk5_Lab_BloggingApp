@@ -17,6 +17,7 @@ class PostsController < ApplicationController
     @post = Post.new
     @post.title = params[:post][:title]
     @post.body = params[:post][:body]
+    @post.username = params[:post][:username]
     if @post.save
       redirect_to posts_path
     else

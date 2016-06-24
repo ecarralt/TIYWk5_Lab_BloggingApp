@@ -1,5 +1,6 @@
 <h1>New Comment</h1>
 
+<%= debug params[:post_id] %>
 
 <% @comment.errors.full_messages.each do |message| %>
   <div class="alert alert-danger" role="alert"><%= message %></div>
@@ -15,6 +16,9 @@
     <%= f.label :username %>
     <%= f.text_field :username %>
   </div>
+
+    <%= hidden_field_tag :post_id, params[:post_id]  %>
+
 
   <%= f.submit %>
 <% end %>

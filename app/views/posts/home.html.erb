@@ -8,5 +8,9 @@
     <i class="glyphicon glyphicon-thumbs-up"></i>
     <% end %>
 
+    <p>
+      Submitted at <%= time_ago_in_words(post.created_at) %> by <%= post.username %>
+    </p>
+
   <% end %>
 </div>

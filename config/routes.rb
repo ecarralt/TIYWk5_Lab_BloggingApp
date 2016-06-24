@@ -7,8 +7,9 @@ Rails.application.routes.draw do
   get '/posts/:id' => 'posts#show', as: :show
   post '/posts/:id/voteup' => 'posts#voteup', as: :voteup
 
+  # get 'comments' => 'comments#index', as: :comments
   get '/comments/:post_id/new' => 'comments#new', as: :new_comment
-  post '/comments' => 'comments#create', as: :create_comment
+  post '/comments/' => 'comments#create', as: :create_comment
 
 
 

@@ -14,3 +14,14 @@
 </div>
 
 <h4>Comments:</h4>
+<div class="comments_area">
+
+    <% @post.comments.each do |comment|%>
+    <p class="comment_body">
+      <%= comment.body %>
+    </p>
+    <span ="comment_username"> by: <%= comment.username %></span>
+
+    <% end %>
+
+</div>
