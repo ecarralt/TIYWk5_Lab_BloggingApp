@@ -2,7 +2,7 @@
 
 <div class= "home_post">
   <% @posts.each do |post| %>
-    <h2> <%= post.title%>   </h2>
+    <h2> <%= link_to post.title, show_path(id: post.id) %>   </h2>
     <p> <%= post.body%>  </p>
   <% end %>
 </div>

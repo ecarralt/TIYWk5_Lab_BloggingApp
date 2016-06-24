@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get "/" => "posts#home", as: :posts
   get '/posts/new' => 'posts#new', as: :new_post
   post '/posts' => 'posts#create', as: :create_post
-  get '/posts/:id' => 'posts#show', as: :post
+  get '/posts/:id' => 'posts#show', as: :show
 
 
 
