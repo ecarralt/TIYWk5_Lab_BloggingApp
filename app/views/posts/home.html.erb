@@ -2,7 +2,11 @@
 
 <div class= "home_post">
   <% @posts.each do |post| %>
-    <h2> <%= link_to post.title, show_path(id: post.id) %>   </h2>
+    <h2> <%= link_to post.title, show_path(id: post.id) %> <small class="home_votes">votes: <%= post.vote_count %></small></h2>
     <p> <%= post.body%>  </p>
+    <%= link_to voteup_path(id: post.id), method: :post, class: "btn btn-success btn-lg" do %>
+    <i class="glyphicon glyphicon-thumbs-up"></i>
+    <% end %>
+
   <% end %>
 </div>

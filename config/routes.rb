@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/posts/new' => 'posts#new', as: :new_post
   post '/posts' => 'posts#create', as: :create_post
   get '/posts/:id' => 'posts#show', as: :show
+  post '/posts/:id/voteup' => 'posts#voteup', as: :voteup
 
 
 
