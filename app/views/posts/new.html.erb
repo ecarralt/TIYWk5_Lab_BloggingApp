@@ -1,0 +1,17 @@
+<h1>New Reddit</h1>
+
+
+<!-- add error message here -->
+
+<%= form_for(@post, url: create_post_path) do |f|%>
+  <div class="post_title_input">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div class="post_body_input">
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+  </div>
+
+  <%= f.submit %>
+<% end %>

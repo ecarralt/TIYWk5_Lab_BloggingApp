@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Redditclone</title>
+  <title>Reddit_byECT</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+<div class="page-header">Reddit</div>
+
+<%= link_to 'Home', posts_path %> <span> ----- </span>
+<%= link_to 'New Reddit', new_post_path %>
+
+
 
 <%= yield %>
 

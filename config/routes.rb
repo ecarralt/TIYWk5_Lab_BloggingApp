@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
 
 
-  get "/" => "posts#home"
+  get "/" => "posts#home", as: :posts
+  get '/posts/new' => 'posts#new', as: :new_post
+  post '/posts' => 'posts#create', as: :create_post
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

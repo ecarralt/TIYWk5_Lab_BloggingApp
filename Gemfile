@@ -7,7 +7,7 @@ gem 'rails', '4.2.6'
 
 
 group :development, :test do
-  # Use sqlite3 as the database for Active Record  
+  # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
 end
 # Use SCSS for stylesheets
@@ -18,8 +18,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-
-
 
 
 
