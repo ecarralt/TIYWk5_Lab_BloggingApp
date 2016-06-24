@@ -6,11 +6,8 @@ Rails.application.routes.draw do
   post '/posts' => 'posts#create', as: :create_post
   get '/posts/:id' => 'posts#show', as: :show
   post '/posts/:id/voteup' => 'posts#voteup', as: :voteup
-
-  # get 'comments' => 'comments#index', as: :comments
-  get '/comments/:post_id/new' => 'comments#new', as: :new_comment
-  post '/comments/' => 'comments#create', as: :create_comment
-
+  post '/posts/:id/postvoteup' => 'posts#voteup_inshow', as: :voteup_inshow
+  post '/posts/:id/comment' => 'posts#create_comment', as: :create_comment
 
 
   # The priority is based upon order of creation: first created -> highest priority.

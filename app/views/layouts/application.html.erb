@@ -8,11 +8,18 @@
 </head>
 <body>
 
-<div class="page-header">Reddit</div>
+<div class="row titlebackground">
+  <div class="col-xs-8 col-xs-offset-2 page-headerme"> Reddit </div>
+</div>
 
-<%= link_to 'Home', posts_path %> <span> ----- </span>
-<%= link_to 'New Reddit', new_post_path %>
-
+<div class="row">
+  <div class="col-xs-3 col-xs-offset-2 links">
+    <%= link_to 'Home', posts_path %>
+    <span>
+    <%= link_to 'New Reddit', new_post_path %>
+    </span>
+  </div>
+</div>
 
 
 <%= yield %>

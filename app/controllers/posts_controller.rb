@@ -28,15 +28,33 @@ class PostsController < ApplicationController
   #use the .find_by method on Post class to interact with the database and SELECT * WHEN id = params id
   def show
     @post = Post.find_by id: params[:id]
+    @comment = Comment.new
   end
 
   #use the .find_by method to find the post where the vote request is up, then use .save to update database
   def voteup
-    @post = Post.find_by id: params[:id]
-    @post.vote_count += 1
-    @post.save
-
+    @post = Post.find_by(id: params[:id])
+    # @post.update(vote_count: @post.vote_count + 1)
+    @post.upvote
     redirect_to posts_path
+  end
+
+  def voteup_inshow
+    @post = Post.find_by(id: params[:id])
+    @post.upvote
+    redirect_to show_path
+  end
+
+  def create_comment
+    @comment = Comment.new
+    @comment.body = params[:comment][:body]
+    @comment.username = params[:comment][:username]
+    @comment.post_id = params[:id]
+    if @comment.save
+      redirect_to show_path(id: @comment.post_id)
+    else
+      render :show
+    end
 
   end
 

@@ -1,15 +1,57 @@
-.page-header {
 
-  background-color: #e74c3c;
-  font-size: 25px;
-  margin-top: 0;
+.titlebackground{
+
+    background-color: #e74c3c;
+    .page-headerme {
+
+    font-size: 25px;
+    margin-top: 0;
+    height: 60px;
+    font-size: 30px;
+    line-height: 60px;
+
+    }
+ }
+
+.links{
+
+   margin-bottom: 10px;
+   margin-top: 10px;
+
+ }
+
+
+.crossarea {
+
+    margin-bottom: 20px;
 
 }
-
 small, .home_votes {
 
   font-size: 12px;
 
+}
+
+.home_voteup_buttons_area{
+  display:flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+
+  a{
+    margin-bottom:1px;
+  }
+
+}
+
+.row .home_post_title{
+
+  h2{
+    margin-top: 0;
+
+  }
 }
 
 p, .comment_body {

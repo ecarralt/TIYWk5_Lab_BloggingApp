@@ -1,16 +1,50 @@
 
 
-<div class= "home_post">
-  <% @posts.each do |post| %>
-    <h2> <%= link_to post.title, show_path(id: post.id) %> <small class="home_votes">votes: <%= post.vote_count %></small></h2>
-    <p> <%= post.body%>  </p>
-    <%= link_to voteup_path(id: post.id), method: :post, class: "btn btn-success btn-lg" do %>
-    <i class="glyphicon glyphicon-thumbs-up"></i>
-    <% end %>
+<% @posts.each do |post| %>
 
-    <p>
-      Submitted at <%= time_ago_in_words(post.created_at) %> by <%= post.username %>
-    </p>
+  <div class="row crossarea">
 
-  <% end %>
-</div>
+      <div class="col-xs-2 home_voteup_buttons_area">
+
+          <%= link_to voteup_path(id: post.id), method: :post, class: "btn btn-success btn-lg" do %>
+          <i class="glyphicon glyphicon-arrow-up"></i>
+          <% end %>
+          <%= link_to voteup_path(id: post.id), method: :post, class: "btn btn-success btn-lg" do %>
+          <i class="glyphicon glyphicon-arrow-down"></i>
+          <% end %>
+
+      </div>
+
+      <div class="col-xs-8 home_post">
+        <div class="row home_post_title">
+
+            <h2> <%= link_to post.title, show_path(id: post.id) %>
+            </h2>
+
+        </div>
+        <div class="row">
+          <div class="home_post_titlecaption">
+            <small class="home_votes">votes: <%= post.vote_count %></small>
+            <small
+            class="home_comments"><%= link_to pluralize(post.comments.count, "comment"), show_path(id: post.id) %>
+            </small>
+          </div>
+        </div>
+
+        <!-- <div class="row">
+          <div class="home_post_body">
+            <p> <%= post.body%>  </p>
+          </div>
+        </div> -->
+        <div class="row">
+          <div class="home_comments">
+            <small>
+              Submitted <%= time_ago_in_words(post.created_at) %> ago by <%= post.username %>
+            </small>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+<% end %>

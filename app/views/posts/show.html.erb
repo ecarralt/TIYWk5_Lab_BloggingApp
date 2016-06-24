@@ -1,17 +1,45 @@
 <h1>  <%= @post.title %> </h1>
 
+<%= link_to voteup_inshow_path(id: @post.id), method: :post, class: "btn btn-success btn-lg" do %>
+<i class="glyphicon glyphicon-thumbs-up"></i>
+<% end %>
+
 <p>
   <%= @post.body %>
 </p>
 
-<small class="home_votes">votes: <%= @post.vote_count %></small>
+<div class="post_show_caption">
+
+  <small>
+    Submitted at <%= time_ago_in_words(@post.created_at) %> by <%= @post.username %>
+  </small>
+  <small class="home_votes">votes: <%= @post.vote_count %></small>
+  <small class="home_votes">comments: <%= @post.comments.count %></small>
+
+</div>
+
 
 <p>
   ===
 </p>
-<div class="comments_title">
-  <%= link_to 'Comment', new_comment_path(post_id: @post.id), class: "btn btn-primary" %>
-</div>
+
+
+
+<h4>New Comment</h4>
+
+<%= form_for(@comment, url: create_comment_path) do |f|%>
+  <div class="comment_body_input">
+    <%= f.text_field :body %>
+  </div>
+  <div class="comment_username_input">
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+  </div>
+
+  <%= f.submit %>
+<% end %>
+
+
 
 <h4>Comments:</h4>
 <div class="comments_area">
@@ -20,8 +48,11 @@
     <p class="comment_body">
       <%= comment.body %>
     </p>
-    <span ="comment_username"> by: <%= comment.username %></span>
-
+    <span ="comment_username"><%= time_ago_in_words(comment.created_at) %> by <%= comment.username %>
+    </span>
+    <p>
+      ====
+    </p>
     <% end %>
 
 </div>
