@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   #Showing all posts by using the Active Record .all function
   def home
-    @posts = Post.all # select * from posts
+    @posts = Post.all.order ("vote_count desc") # select * from posts
     # Post.count #select count(*) from posts
   end
 
