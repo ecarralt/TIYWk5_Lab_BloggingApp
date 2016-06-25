@@ -1,4 +1,4 @@
-class AddUserNameAndModifyPostidToInteger < ActiveRecord::Migration
+class AddUsernameToComments < ActiveRecord::Migration
   def change
 
     add_column :comments, :username, :string
