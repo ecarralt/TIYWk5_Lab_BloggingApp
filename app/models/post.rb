@@ -9,5 +9,10 @@ class Post < ActiveRecord::Base
     self.vote_count += 1
     self.save
    end
-   
+
+   def downvote
+     self.vote_count -= 1
+     self.save
+   end
+
 end

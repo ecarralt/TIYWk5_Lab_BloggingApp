@@ -45,6 +45,20 @@ class PostsController < ApplicationController
     redirect_to show_path
   end
 
+  #use the .find_by method to find the post where the vote request is up, then use .save to update database
+  def votedown
+    @post = Post.find_by(id: params[:id])
+    # @post.update(vote_count: @post.vote_count + 1)
+    @post.downvote
+    redirect_to posts_path
+  end
+
+  def votedown_inshow
+    @post = Post.find_by(id: params[:id])
+    @post.downvote
+    redirect_to show_path
+  end
+
   def create_comment
     @comment = Comment.new
     @comment.body = params[:comment][:body]

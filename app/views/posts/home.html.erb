@@ -9,7 +9,7 @@
           <%= link_to voteup_path(id: post.id), method: :post, class: "btn btn-success btn-lg" do %>
           <i class="glyphicon glyphicon-arrow-up"></i>
           <% end %>
-          <%= link_to voteup_path(id: post.id), method: :post, class: "btn btn-success btn-lg" do %>
+          <%= link_to votedown_path(id: post.id), method: :post, class: "btn btn-success btn-lg" do %>
           <i class="glyphicon glyphicon-arrow-down"></i>
           <% end %>
 
@@ -22,7 +22,7 @@
             </h2>
 
         </div>
-        <div class="row">
+        <div class="row home_post_title_row">
           <div class="home_post_titlecaption">
             <small class="home_votes">votes: <%= post.vote_count %></small>
             <small
@@ -36,7 +36,7 @@
             <p> <%= post.body%>  </p>
           </div>
         </div> -->
-        <div class="row">
+        <div class="row home_post_timestamp_row">
           <div class="home_comments">
             <small>
               Submitted <%= time_ago_in_words(post.created_at) %> ago by <%= post.username %>

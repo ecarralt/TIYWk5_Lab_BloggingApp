@@ -1,14 +1,24 @@
 
 .titlebackground{
 
-    background-color: #e74c3c;
-    .page-headerme {
+    background-color: #CEE3F8;
 
-    font-size: 25px;
-    margin-top: 0;
-    height: 60px;
-    font-size: 30px;
-    line-height: 60px;
+    .page-headerme a {
+        font-family: "Trirong", serif;
+        font-size: 25px;
+        margin-top: 0;
+        margin-left: 20px;
+        height: 60px;
+        font-size: 30px;
+        line-height: 60px;
+        color: #020202;
+
+        &:hover {
+          text-decoration: none;
+          color: darken(#020202, 10%);
+
+
+        }
 
     }
  }
@@ -46,17 +56,34 @@ small, .home_votes {
 
 }
 
-.row .home_post_title{
 
-  h2{
-    margin-top: 0;
+.row .home_post_title_row{
+
+ margin-left: 0;
+
+}
+
+.row .home_post_timestamp_row{
+
+ margin-left: 0;
+
+}
+
+.row .home_post_title{
+      margin-left: 0;
+      h2{
+        margin-top: 0;
+      }
+}
+
+.row .post_body{
+  margin-left: 0;
+  margin-top: 20px; 
+}
+
+   p, .comment_body {
+
+      border-width: 2px;
+      border-color: black;
 
   }
-}
-
-p, .comment_body {
-
-  border-width: 2px;
-  border-color: black;
-
-}

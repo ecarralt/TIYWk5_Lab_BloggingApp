@@ -2,6 +2,8 @@
 <html>
 <head>
   <title>Reddit_byECT</title>
+  <link rel="stylesheet" type="text/css"
+      href="https://fonts.googleapis.com/css?family=Trirong">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -9,11 +11,13 @@
 <body>
 
 <div class="row titlebackground">
-  <div class="col-xs-8 col-xs-offset-2 page-headerme"> Reddit </div>
+  <div class="col-xs-8 page-headerme">
+    <%= link_to 'Reddit', posts_path %>
+  </div>
 </div>
 
 <div class="row">
-  <div class="col-xs-3 col-xs-offset-2 links">
+  <div class="col-xs-8 col-xs-offset-2 links">
     <%= link_to 'Home', posts_path %>
     <span>
     <%= link_to 'New Reddit', new_post_path %>
