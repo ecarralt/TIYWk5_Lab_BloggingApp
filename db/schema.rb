@@ -14,11 +14,11 @@
 ActiveRecord::Schema.define(version: 20160625212945) do
 
   create_table "comments", force: :cascade do |t|
+    t.string   "post_id"
     t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "username"
-    t.integer  "post_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20160625212945) do
     t.datetime "updated_at"
     t.integer  "vote_count", default: 0
     t.string   "username"
+    t.integer  "post_id"
   end
 
 end
