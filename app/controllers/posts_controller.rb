@@ -17,7 +17,11 @@ class PostsController < ApplicationController
     @post = Post.new
     @post.title = params[:post][:title]
     @post.body = params[:post][:body]
-    @post.username = params[:post][:username]
+    if params[:post][:username].present?
+      @post.username = params[:post][:username]
+    else
+      @post.username = "anonymous"
+    end
     if @post.save
       redirect_to show_path(id: @post.id)
     else
@@ -62,8 +66,13 @@ class PostsController < ApplicationController
   def create_comment
     @comment = Comment.new
     @comment.body = params[:comment][:body]
-    @comment.username = params[:comment][:username]
     @comment.post_id = params[:id]
+    if params[:comment][:username].present?
+      @comment.username = params[:comment][:username]
+    else
+      @comment.username = "anonymous"
+    end
+
     @comment.save
     redirect_to show_path(id: @comment.post_id)
 

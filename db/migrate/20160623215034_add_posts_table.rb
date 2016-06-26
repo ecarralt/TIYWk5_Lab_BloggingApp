@@ -3,7 +3,7 @@ class AddPostsTable < ActiveRecord::Migration
 
     create_table :posts do |t|
       t.string :title
-      t.text  :body
+      t.text  :body  #actually, reddits don't have body but leaving in case useful later
       t.timestamps
     end
 

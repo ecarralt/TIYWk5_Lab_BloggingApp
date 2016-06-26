@@ -1,7 +1,6 @@
 class Post < ActiveRecord::Base
 
    validates :title, presence: true
-   validates :username, presence: true
    validates :vote_count, presence: true
    has_many :comments
 
