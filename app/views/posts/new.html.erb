@@ -1,25 +1,43 @@
-<h1>New Reddit</h1>
 
 
-<% @post.errors.full_messages.each do |message| %>
-  <div class="alert alert-danger" role="alert"><%= message %></div>
-<% end %>
-
-
-<%= form_for(@post, url: create_post_path) do |f|%>
-  <div class="post_title_input">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+<div class="row new_title">
+  <div class="col-xs-8 col-xs-offset-2">
+    <h1>Ask Reddit</h1>
   </div>
-  <div class="post_body_input">
-    <%= f.label :body %>
-    <%= f.text_area :body %>
+</div>
+
+<div class="row new_title">
+  <div class="col-xs-8 col-xs-offset-2">
+    <% @post.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger" role="alert"><%= message %></div>
+    <% end %>
   </div>
-  <div class="post_username_input">
-    <%= f.label :username %>
-    <%= f.text_area :username %>
-  </div>
+</div>
 
 
-  <%= f.submit %>
-<% end %>
+
+
+<div class="row row_new_post_form">
+  <div class="col-xs-8 col-xs-offset-2 new_post_form">
+    <div class="form-group">
+      <%= form_for(@post, url: create_post_path) do |f|%>
+
+        <div class="row newpost_titlelabel">
+          <%= f.label "Title:" %>
+        </div>
+        <div class="row newpost_titleinput">
+          <%= f.text_area :title, class:"form-control", size: "10x2" %>
+        </div>
+        <div class="row newpost_username_save_cancel">
+          <%= f.label :username %>
+          <%= f.text_field :username %>
+          <%= f.submit "Submit" %>
+          or
+          <%= link_to 'Cancel', :back, class: "ask_reddit" %>
+        </div>
+
+        <% end %>
+
+    </div>
+  </div>
+</div>

@@ -19,7 +19,7 @@ class PostsController < ApplicationController
     @post.body = params[:post][:body]
     @post.username = params[:post][:username]
     if @post.save
-      redirect_to posts_path
+      redirect_to show_path(id: @post.id)
     else
       render :new
     end
@@ -64,11 +64,8 @@ class PostsController < ApplicationController
     @comment.body = params[:comment][:body]
     @comment.username = params[:comment][:username]
     @comment.post_id = params[:id]
-    if @comment.save
-      redirect_to show_path(id: @comment.post_id)
-    else
-      render :show
-    end
+    @comment.save
+    redirect_to show_path(id: @comment.post_id)
 
   end
 

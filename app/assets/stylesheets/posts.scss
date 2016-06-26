@@ -1,7 +1,7 @@
-
 .titlebackground{
 
     background-color: #CEE3F8;
+    margin-top: 0px;
 
     .page-headerme a {
         font-family: "Trirong", serif;
@@ -16,10 +16,7 @@
         &:hover {
           text-decoration: none;
           color: darken(#020202, 10%);
-
-
         }
-
     }
  }
 
@@ -27,18 +24,41 @@
 
    margin-bottom: 10px;
    margin-top: 10px;
+ }
+
+ .askreddit {
+
+   a {
+     color: red;
+   }
 
  }
 
 
 .crossarea {
-
     margin-bottom: 20px;
-
 }
 small, .home_votes {
 
   font-size: 12px;
+
+}
+
+.btn, .btn-success, .btn-lg{
+
+  background-color: #CEE3F8;
+  border-color: #CEE3F8;
+  i{
+    color: #020202;
+  }
+
+  &:hover {
+    background-color: darken(#CEE3F8, 10%);
+    border-color: darken(#CEE3F8, 10%);
+
+
+  }
+
 
 }
 
@@ -57,33 +77,96 @@ small, .home_votes {
 }
 
 
-.row .home_post_title_row{
+.home_post{
+      .home_post_title{
+            margin-left: 0;
+            margin-top: 0;
+            h2, h1 {
+              margin-top: 0;
+            }
+      }
 
- margin-left: 0;
+      .home_post_title_row{
 
-}
+        margin-top: 0px;
+      }
 
-.row .home_post_timestamp_row{
+      .home_post_timestamp_row{
 
- margin-left: 0;
+       margin-left: 0;
+       margin-top: 0px;
 
-}
-
-.row .home_post_title{
-      margin-left: 0;
-      h2{
-        margin-top: 0;
       }
 }
 
-.row .post_body{
+
+
+.row, .post_body{
   margin-left: 0;
-  margin-top: 20px; 
+  margin-top: 20px;
 }
 
-   p, .comment_body {
 
-      border-width: 2px;
-      border-color: black;
+.newcomment_form{
+
+
+  padding-right: 0px;
+}
+
+.comment_username_input{
+
+  margin-top: 10px;
+
+}
+
+.comments_area {
+
+  .comment_body {
+
+      margin-left: 0px;
+      margin-top: 0px;
+
+      .comment_username{
+        margin-bottom: 15px;
+        padding-left: 0px;
+
+      }
+
+    .panel, .panel-default{
+
+        margin-bottom: 0;
+        padding-left: 5px;
+
+        .panel-body{
+
+          padding-left: 0;
+          padding-top: 5px;
+          padding-bottom: 5px;
+
+
+        }
+
+    }
+  }
+
+}
+
+
+.new_title{
+  margin-top: 0px;
+}
+
+.row_new_post_form{
+  margin-top: 0px;
+
+  .newpost_titlelabel{
+      font-size: 20px;
 
   }
+
+  .newpost_titleinput{
+
+    margin-top: 5px;
+  }
+
+}
