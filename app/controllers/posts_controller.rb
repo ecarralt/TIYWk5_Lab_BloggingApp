@@ -64,6 +64,7 @@ class PostsController < ApplicationController
   end
 
   def create_comment
+    @post = Post.find_by id: params[:id]
     @comment = Comment.new
     @comment.body = params[:comment][:body]
     @comment.post_id = params[:id]
@@ -73,8 +74,11 @@ class PostsController < ApplicationController
       @comment.username = "anonymous"
     end
 
-    @comment.save
-    redirect_to show_path(id: @comment.post_id)
+    if @comment.save
+      redirect_to show_path(id: @comment.post_id)
+    else
+      render :show
+    end
 
   end
 
